@@ -1,0 +1,34 @@
+.image-size {
+    width: 100px;
+    height: 100px;
+  }
+  
+table.myTable {
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table.myTable td, table.myTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+  }
+  table.myTable thead {
+    background: #1C6EA4;
+    border-bottom: 2px solid #444444;
+  }
+  table.myTable thead th {
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  table.myTable tfoot td {
+    font-size: 14px;
+  }
+  table.myTable tfoot .links {
+    text-align: right;
+  }
+  table.myTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
