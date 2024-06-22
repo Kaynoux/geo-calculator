@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <h1>Formelsammlung</h1>
+    <header>
+      <h1>Formelsammlung</h1>
+    </header>
     <nav>
       <a href="./index.html">Startseite</a>
       <a href="./formelsammlung.html">Formelsammlung</a>
       <a href="./rechner.html">Rechner</a>
     </nav>
     <div>
-      <table class="myTable" style="width: 100%">
+      <table style="width: 100%">
         <caption>
           <h1>2D</h1>
         </caption>
@@ -30,11 +32,13 @@
           </td>
           <td>
             <math><mi>a</mi> <mo>+</mo> <mi>b</mi> <mo>+</mo> <mi>c</mi></math>
+            <sup><a href="#fn1" class="footnote">[1]</a></sup>
           </td>
           <td>
             <math>
               <mfrac><mn>1</mn><mn>2</mn></mfrac> <mo>*</mo> <mi>g</mi> <mo>*</mo> <mi>h</mi>
             </math>
+            <sup><a href="#fn1" class="footnote">[1]</a></sup>
           </td>
         </tr>
         <tr>
@@ -79,7 +83,7 @@
         </tr>
       </table>
 
-      <table class="myTable" style="width: 100%">
+      <table style="width: 100%">
         <caption>
           <h1>3D</h1>
         </caption>
@@ -172,5 +176,22 @@
         </tr>
       </table>
     </div>
+
+    <footer>
+      <h3>Quellen</h3>
+      <ol>
+        <li id="fn1">
+          Joachim Herz Stiftung:
+          <!-- Quelle wird durch _blank in einem neuem Tab geöffnet -->
+          <a
+            href="https://www.leifiphysik.de/mechanik/masse-volumen-und-dichte/grundwissen/flaechen-und-volumenberechnung"
+            target="_blank"
+          >
+            https://www.leifiphysik.de
+          </a>
+          , abgerufen am 9.06.2024
+        </li>
+      </ol>
+    </footer>
   </body>
 </html>

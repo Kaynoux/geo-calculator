@@ -4,23 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geo Calculator - Startseite</title>
-    <style>
-      .bold {
-        font-weight: bold;
-      }
-      .italic {
-        font-style: italic;
-      }
-      .underline {
-        text-decoration: underline;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <audio autoplayMusic>
-      <source src="./audio/elevator_musik.mp3" type="audio/mp3" />
-      Ihr Browser unterstüzt die Musik nicht
-    </audio>
     <header>
       <h1>Willkommen zum Geo Calculator</h1>
     </header>
@@ -29,18 +15,26 @@
       <a href="./formelsammlung.html">Formelsammlung</a>
       <a href="./rechner.html">Rechner</a>
     </nav>
+    <audio controls autoplay loop muted>
+      <source src="./audio/elevator_musik.mp3" type="audio/mp3" />
+      Ihr Browser unterstüzt die Musik nicht
+    </audio>
     <section>
       <h2>Überblick</h2>
       <p><b>Dies ist die Startseite des Geo Calculators.</b></p>
       <p><i>Hier finden Sie verschiedene geometrische Berechnungen und Formeln.</i></p>
       <p><small>Nutzen Sie die Navigation oben, um durch die Seiten zu blättern.</small></p>
+      <p>
+        Diese Seite wurde an der <abbr title="Duale Hochschule Baden-Württemberg">DHBW</abbr> erstellt im Kurs
+        <abbr title="Technische Informatik Jahrgang 2023">TINF23B</abbr>.
+      </p>
     </section>
     <article>
       <h3>Neueste Artikel</h3>
       <p>
         Lesen Sie unseren <span class="bold">neuesten Artikel</span> über die Anwendung geometrischer Formeln im Alltag.
       </p>
-      <p><span class="italic">Weitere Artikel</span> finden Sie in unserem <a href="./blog.html">Blog-Bereich</a>.</p>
+      <p><span class="italic">Weitere Artikel</span> finden sie nicht.</p>
     </article>
     <aside>
       <h4>Hilfreiche Tipps</h4>
@@ -53,6 +47,7 @@
         Musterstraße 1<br />
         12345 Musterstadt<br />
         <a href="mailto:info@geocalculator.de">info@geocalculator.de</a>
+        <p style="text-align: right"><time datetime="2024-06-03">Stand: 03.06.2024</time></p>
       </address>
     </footer>
   </body>

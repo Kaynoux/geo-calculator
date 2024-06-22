@@ -1,7 +1,9 @@
 .image-size {
     width: 100px;
     height: 100px;
+    filter: invert(100%);
   }
+
   
 table.myTable {
     text-align: left;
@@ -32,3 +34,134 @@ table.myTable {
     padding: 2px 8px;
     border-radius: 5px;
   }
+
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Stile */
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    font-size: large;
+}
+
+/* Hauptinhaltsstile */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Tabellenstile */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #2e2e2e;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #232323;
+}
+
+tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+/* Abgerundete Ecken für Tabellen */
+table th:first-child,
+table td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+table th:last-child,
+table td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Überschriften Stile */
+h1, h2, h3, h4 {
+    color: #bb86fc;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+/* Footer Stile */
+footer {
+    background-color: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+a {
+  color: #bb86fc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+nav {
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+nav a {
+  color: #bb86fc;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #333;
+}
