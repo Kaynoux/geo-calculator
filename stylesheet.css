@@ -1,9 +1,12 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .image-size {
     width: 100px;
     height: 100px;
     filter: invert(100%);
   }
-
   
 table.myTable {
     text-align: left;
@@ -38,7 +41,6 @@ table.myTable {
   body {
     background-color: #121212;
     color: #e0e0e0;
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -165,3 +167,46 @@ nav a {
 nav a:hover {
   background-color: #333;
 }
+
+#version {
+  text-align: right;
+}
+
+.street::before {
+  content: "📬";
+}
+.city::before {
+  content: "🏘️";
+}
+
+.mail::before {
+  content: "📧 ";
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  section, article, aside {
+    flex-direction: column;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+  }
+
+  section, article, aside {
+    flex-direction: column;
+  }
+
+  nav a {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+

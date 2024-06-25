@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
+    <embed src="./mathe.pdf" width="500" height="375" type="application/pdf" />
     <header>
       <h1>Willkommen zum Geo Calculator</h1>
     </header>
@@ -15,7 +16,7 @@
       <a href="./formelsammlung.html">Formelsammlung</a>
       <a href="./rechner.html">Rechner</a>
     </nav>
-    <audio controls autoplay loop muted>
+    <audio autoplay loop muted>
       <source src="./audio/elevator_musik.mp3" type="audio/mp3" />
       Ihr Browser unterstüzt die Musik nicht
     </audio>
@@ -44,10 +45,10 @@
       <address>
         <strong>Kontakt:</strong><br />
         Geo Calculator<br />
-        Musterstraße 1<br />
-        12345 Musterstadt<br />
-        <a href="mailto:info@geocalculator.de">info@geocalculator.de</a>
-        <p style="text-align: right"><time datetime="2024-06-03">Stand: 03.06.2024</time></p>
+        <div class="street">Musterstraße 1</div>
+        <div class="city">12345 Musterstadt</div>
+        <a href="mailto:info@geocalculator.de" class="mail">info@geocalculator.de</a>
+        <p id="version"><time datetime="2024-06-03">Stand: 03.06.2024</time></p>
       </address>
     </footer>
   </body>
