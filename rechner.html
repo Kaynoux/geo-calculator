@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geo Calcultor - Rechner</title>
     <link rel="stylesheet" href="stylesheet.css" />
+    <script src="rechner.js" defer></script>
   </head>
   <body>
     <h1>Rechner</h1>
@@ -13,5 +14,61 @@
       <a href="./formelsammlung.html">Formelsammlung</a>
       <a href="./rechner.html">Rechner</a>
     </nav>
+    <main class="grid-container">
+      <select id="2d-shape-select">
+        <option value="0">Dreieck</option>
+        <option value="1">Quadrat</option>
+        <option value="2">Rechteck</option>
+        <option value="3">Kreis</option>
+      </select>
+
+      <div class="input-container" id="input-a">
+        <label for="input-a">Seite A:</label>
+        <input type="text" placeholder="Seite A" />
+        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="input-b">
+        <label for="input-b">Seite B:</label>
+        <input type="text" placeholder="Seite B" />
+        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="input-c">
+        <label for="input-c">Seite C:</label>
+        <input type="text" placeholder="Seite C" />
+        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="input-r">
+        <label for="input-r">Radius:</label>
+        <input type="text" placeholder="Radius" />
+        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="input-circumference">
+        <label for="input-circumference">Umfang:</label>
+        <input type="text" placeholder="Umfang" />
+        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="input-area">
+        <label for="input-area">Fläche:</label>
+        <input type="text" placeholder="Fläche" />
+        <span class="unit">cm²</span>
+      </div>
+
+      <button type="button" onclick="formSubmit2d()">Berechnen</button>
+
+      <form id="3d-calculator">
+        <select>
+          <option value="0">Würfel</option>
+          <option value="0">Quader</option>
+          <option value="0">Kugel</option>
+          <option value="0">3 seitige Pyramide</option>
+          <option value="0">4 seitige Pyramide</option>
+        </select>
+      </form>
+    </main>
   </body>
 </html>
