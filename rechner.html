@@ -8,7 +8,9 @@
     <script src="rechner.js" defer></script>
   </head>
   <body>
-    <h1>Rechner</h1>
+    <header>
+      <h1>Rechner</h1>
+    </header>
     <nav>
       <a href="./index.html">Startseite</a>
       <a href="./formelsammlung.html">Formelsammlung</a>
@@ -16,53 +18,63 @@
     </nav>
     <main class="grid-container">
       <select id="2d-shape-select">
-        <option value="0">Dreieck</option>
-        <option value="1">Quadrat</option>
-        <option value="2">Rechteck</option>
-        <option value="3">Kreis</option>
+        <option value="triangle">Dreieck</option>
+        <option value="square">Quadrat</option>
+        <option value="rectangle">Rechteck</option>
+        <option value="circle">Kreis</option>
+        <option value="cube">Würfel</option>
+        <option value="cuboid">Quader</option>
+        <option value="sphere">Kugel</option>
+        <option value="pyramid3">3 seitige Pyramide</option>
+        <option value="pyramid4">4 seitige Pyramide</option>
       </select>
+
+      <button type="button" onclick="calculate()">Berechnen</button>
 
       <div class="input-container" id="a">
         <label for="input-a">Seite A:</label>
         <input type="text" placeholder="Seite A" id="input-a" />
-        <span class="unit">cm</span>
       </div>
 
       <div class="input-container" id="b">
         <label for="input-b">Seite B:</label>
         <input type="text" placeholder="Seite B" id="input-b" />
-        <span class="unit">cm</span>
       </div>
 
       <div class="input-container" id="c">
         <label for="input-c">Seite C:</label>
         <input type="text" placeholder="Seite C" id="input-c" />
-        <span class="unit">cm</span>
       </div>
 
       <div class="input-container" id="r">
         <label for="input-r">Radius:</label>
         <input type="text" placeholder="Radius" id="input-r" />
-        <span class="unit">cm</span>
+      </div>
+
+      <div class="input-container" id="g">
+        <label for="input-g">Grundseite:</label>
+        <input type="text" placeholder="Grundseite" id="input-g" />
+      </div>
+
+      <div class="input-container" id="h">
+        <label for="input-h">Höhe:</label>
+        <input type="text" placeholder="Höhe" id="input-h" />
+      </div>
+
+      <div class="input-container" id="g-area">
+        <label for="input-g-area">Grundfläche:</label>
+        <input type="text" placeholder="Grundfläche" id="input-g-area" />
       </div>
 
       <div class="input-container" id="area">
         <label for="input-area">Fläche:</label>
         <input type="text" placeholder="Fläche" id="input-area" />
-        <span class="unit">cm²</span>
       </div>
 
-      <button type="button" onclick="calculate2d()">Berechnen</button>
-
-      <form id="3d-calculator">
-        <select>
-          <option value="0">Würfel</option>
-          <option value="0">Quader</option>
-          <option value="0">Kugel</option>
-          <option value="0">3 seitige Pyramide</option>
-          <option value="0">4 seitige Pyramide</option>
-        </select>
-      </form>
+      <div class="input-container" id="volume">
+        <label for="input-volume">Fläche:</label>
+        <input type="text" placeholder="Fläche" id="input-volume" />
+      </div>
     </main>
   </body>
 </html>
