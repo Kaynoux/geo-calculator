@@ -4,41 +4,46 @@
     <meta charset="UTF-8" />
     <!-- ELEGANCE-Patter Mobile Responsiveness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geo Calculator - Neue Seite</title>
+    <title>Geo Calculator - Grid</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
     <header>
-      <h1>Neue Seite</h1>
+      <h1>Grid</h1>
     </header>
     <nav>
       <!-- ELEGANCE-Pattern Streamlined Navigation and Prioritize Cosistency: same navbar on all pages -->
       <a href="./index.html">Startseite</a>
       <a href="./formulas.html">Formelsammlung</a>
       <a href="./calculator.html">Rechner</a>
+      <a href="./grid.html">Grid</a>
     </nav>
     <section class="grid-container">
-      <div class="grid-item">First name:</div>
-      <div class="grid-item"><input type="text" placeholder="First name" /></div>
-      <div class="grid-item">Last name:</div>
-      <div class="grid-item"><input type="text" placeholder="Last name" /></div>
-      <div class="grid-item">Address:</div>
-      <div class="grid-item"><input type="text" placeholder="Address" /></div>
-      <div class="grid-item">Department:</div>
-      <div class="grid-item">
-        <select>
-          <option>Finance</option>
-          <option>Human Resources</option>
-          <option>Marketing</option>
-          <option>Payroll</option>
-          <option>Shipping</option>
+      <label for="firstname">First name:</label>
+      <input type="text" id="firstname" name="firstname" />
+
+      <label for="lastname">Last name:</label>
+      <input type="text" id="lastname" name="lastname" />
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" />
+
+      <div class="department">
+        <label for="department" class="department-label">Department:</label>
+        <select id="department" name="department" size="5">
+          <option value="finance">Finance</option>
+          <option value="hr">Human Resources</option>
+          <option value="marketing">Marketing</option>
+          <option value="payroll">Payroll</option>
+          <option value="shipping">Shipping</option>
         </select>
       </div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"><button>Back</button></div>
-      <div class="grid-item"><button>Cancel</button></div>
-      <div class="grid-item"><button>Next</button></div>
+
+      <div class="buttons">
+        <button type="button">Back</button>
+        <button type="button">Cancel</button>
+        <button type="button">Next</button>
+      </div>
     </section>
     <footer>
       <address>

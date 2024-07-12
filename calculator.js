@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   inputGArea = document.getElementById('input-g-area');
   inputArea = document.getElementById('input-area');
   inputVolume = document.getElementById('input-volume');
+  calculateBtn = document.getElementById('calculate-btn');
 
   updateFields();
 });
@@ -39,6 +40,7 @@ function updateFields(newShape) {
   divGArea.style.display = 'none';
   diletea.style.display = 'none';
   divVolume.style.display = 'none';
+  calculateBtn.style.display = 'none';
   
   clearAllFieldsAndBorders();
 
@@ -49,38 +51,46 @@ function updateFields(newShape) {
       divB.style.display = 'block';
       divC.style.display = 'block';
       diletea.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'square':
       divA.style.display = 'block';
       diletea.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'rectangle':
       divA.style.display = 'block';
       divB.style.display = 'block';
       diletea.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'circle':
       divR.style.display = 'block';
       diletea.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'cube':
       divA.style.display = 'block';
       divVolume.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'cuboid':
       divA.style.display = 'block';
       divB.style.display = 'block';
       divC.style.display = 'block';
       divVolume.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'sphere':
       divR.style.display = 'block';
       divVolume.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
     case 'pyramid':
       divGArea.style.display = 'block';
       divH.style.display = 'block';
       divVolume.style.display = 'block';
+      calculateBtn.style.display = 'block';
       break;
   }
 }

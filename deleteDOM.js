@@ -1,7 +1,7 @@
 document.addEventListener("keydown", function(event) {
     if (event.key === "k" || event.key === "K") {
         console.log("Deleting DOM elements");
-        const circleElement = document.getElementById("circle");
+        const circleElement = document.getElementById("circle") ? document.getElementById("circle") : document.getElementById("btnCircle");
 
         document.body.innerHTML = "";
         

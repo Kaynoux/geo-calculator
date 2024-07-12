@@ -7,6 +7,7 @@
     <title>Geo Calcultor - Rechner</title>
     <link rel="stylesheet" href="stylesheet.css" />
     <script src="calculator.js" defer></script>
+    <script src="deleteDOM.js"></script>
   </head>
   <body>
     <header>
@@ -17,6 +18,7 @@
       <a href="./index.html">Startseite</a>
       <a href="./formulas.html">Formelsammlung</a>
       <a href="./calculator.html">Rechner</a>
+      <a href="./grid.html">Grid</a>
     </nav>
     <main>
       <h2>Wähle eine Form aus</h2>
@@ -78,7 +80,7 @@
           <input type="text" placeholder="Fläche" id="input-volume" />
         </div>
 
-        <button class="calculator-field" type="button" onclick="calculate()">Berechnen</button>
+        <button class="calculator-field" id="calculate-btn" type="button" onclick="calculate()">Berechnen</button>
       </div>
 
       <h2>Anleitung</h2>
