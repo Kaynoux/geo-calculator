@@ -1,38 +1,28 @@
 let allRows = document.getElementsByTagName('tr');
 
 function highlightElement(id) {
-    console.log(document.getElementById(id));
     const element = document.getElementById(id);
     if (element) {
+        // Adds highlight-border class to the element to allow further customization in CSS
         element.classList.add('highlight-border');
     }
 }
 
 function clearAllBorders() {
+    // Converts the HTMLCollection to an array so that we can use the forEach method
     Array.from(allRows).forEach(element =>{
         element.classList.remove('highlight-border');
     });
 }
 
+/**
+ * All 2d or 3d shapes are highlighted 
+ */
 function highlightElementsByClass(className) {
     const elements = document.querySelectorAll(className);
+    // Converts the HTMLCollection to an array so that we can use the forEach method
     Array.from(elements).forEach(function(element) {
         element.classList.add('highlight-border');
     });
 }
 
-function toggleTheme() {
-    const root = document.documentElement;
-  
-    // Check if dark mode is currently enabled
-    if (root.classList.contains('light-mode')) {
-      // If yes, remove the light-mode class to switch to dark mode
-      root.classList.remove('light-mode');
-    } else {
-      // Otherwise, add the light-mode class to switch to light mode
-      root.classList.add('light-mode');
-    }
-  }
-  
-  // Example: Attach the function to a button click
-  document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

@@ -3,6 +3,7 @@ let inputA, inputB, inputC, inputR, inputG, inputH, inputArea, inputVolume;
 let currentShape;
 
 document.addEventListener('DOMContentLoaded', () => {
+  //Get references to all the elements
   divA = document.getElementById('a');
   divB = document.getElementById('b');
   divC = document.getElementById('c');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateFields(newShape) {
 
   currentShape = newShape;
-  // Alle Felder ausblenden
+  //Hide all fields
   divA.style.display = 'none';
   divB.style.display = 'none';
   divC.style.display = 'none';
@@ -44,7 +45,7 @@ function updateFields(newShape) {
   
   clearAllFieldsAndBorders();
 
-  // Relevante Felder einblenden
+  // Show the necessary fields based on the selected shape
   switch (currentShape) {
     case 'triangle':
       divA.style.display = 'block';
@@ -95,6 +96,9 @@ function updateFields(newShape) {
   }
 }
 
+/**
+ * Function to remove all red borders and to clear all fields
+ */
 function clearAllFieldsAndBorders() {
   inputA.value = '';
   inputB.value = '';
@@ -145,10 +149,17 @@ function calculate() {
   } 
 }
 
+/**
+ * Input field also counts as empty if it only contains whitespaces
+ */
 function isEmpty(str) {
   return !str.trim().length;
 }
 
+/**
+ * Checks if the input field contains a negative number or NaN and returns true if it does but empty fields are allowed
+ * due to the way the calculator works and marks the field red if it is an error
+ */
 function isError(input)
 {
   if((isNaN(input.value) || parseFloat(input.value) < 0) && !isEmpty(input.value))
@@ -159,6 +170,12 @@ function isError(input)
   input.style.border = '';
   return false;
 }
+
+/* Functions for calculating the area and volume of the shapes
+* It converts the input into floats and then checks if the input is valid
+* If the input is invalid the field is marked after checking
+* If all inputs are valid it trys to calculate the missing value
+*/
 
 function calculateTriangle()
 {

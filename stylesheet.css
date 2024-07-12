@@ -32,6 +32,7 @@
   }
 }
 
+/* Setting font for all elements */
 * {
   font-family: "Roboto", sans-serif;
   color: var(--text);
@@ -128,6 +129,7 @@ button {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Highlighting the button when hovering */
 button:hover {
   background-color: var(--primary);
 }
@@ -152,6 +154,7 @@ tr {
   border-color: var(--primary);
 }
 
+/* Changing Colors between every row to increase visibility */
 tr:nth-child(even) {
   background-color: var(--grey1);
 }
@@ -248,7 +251,6 @@ ol {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
   gap: 20px;
   margin-top: 50px;
 }
@@ -282,6 +284,7 @@ ol {
   box-sizing: border-box;
 }
 
+/* Overriding the border when highlighting */
 .highlight-border {
   border: 3px solid var(--primary) !important;
 }
