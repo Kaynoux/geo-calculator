@@ -1,21 +1,22 @@
 let allRows = document.getElementsByTagName('tr');
 
 function highlightElement(id) {
+    console.log(document.getElementById(id));
     const element = document.getElementById(id);
     if (element) {
-    element.style.border = '2px solid red';
+        element.classList.add('highlight-border');
     }
 }
 
 function clearAllBorders() {
     Array.from(allRows).forEach(element =>{
-    element.style.border = 'none';
+        element.classList.remove('highlight-border');
     });
 }
 
 function highlightElementsByClass(className) {
     const elements = document.querySelectorAll(className);
     Array.from(elements).forEach(function(element) {
-    element.style.border = '2px solid red';
+        element.classList.add('highlight-border');
     });
 }
