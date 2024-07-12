@@ -15,3 +15,5 @@ document.addEventListener("keydown", function(event) {
         document.body.appendChild(restoreButton);
     }
 });
+
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

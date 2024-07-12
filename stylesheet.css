@@ -1,16 +1,33 @@
 /* Generel Section*/
 
-:root {
-  --primary: #bb86fc;
-  --secondary: #3700b3;
-  --lightGrey1: #2e2e2e;
-  --lightGrey2: #333333;
-  --grey1: #1e1e1e;
-  --grey2: #232323;
-  --greyHighlight: #444444;
-  --background: #121212;
-  --text: #e0e0e0;
-  --highlight: #ffffff;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #bb86fc;
+    --secondary: #3700b3;
+    --lightGrey1: #2e2e2e;
+    --lightGrey2: #333333;
+    --grey1: #1e1e1e;
+    --grey2: #232323;
+    --greyHighlight: #444444;
+    --background: #121212;
+    --text: #e0e0e0;
+    --highlight: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #6200ea;
+    --secondary: #03dac6;
+    --lightGrey1: #f5f5f5;
+    --lightGrey2: #eeeeee;
+    --grey1: #ffffff;
+    --grey2: #f1f1f1;
+    --greyHighlight: #cccccc;
+    --background: #ffffff;
+    --text: #000000;
+    --highlight: #000000;
+  }
 }
 
 * {
@@ -112,8 +129,8 @@ button:hover {
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
+  margin-bottom: 30px;
 }
 
 th,
@@ -156,7 +173,7 @@ select:hover {
 
 /* Input-Felder im Material-UI-Stil */
 input {
-  background-color: var(--lightGrey2);
+  background-color: var(--grey2);
   border: none;
   padding: 10px;
   border-radius: 4px;
@@ -169,6 +186,10 @@ input {
 input:focus {
   background-color: var(--greyHighlight);
   outline: none;
+}
+
+p {
+  line-height: 1.6;
 }
 
 h1,
@@ -206,12 +227,15 @@ a:hover {
   text-decoration: underline;
 }
 
+ol {
+  list-style-position: inside;
+}
+
 /* Class Section*/
 
 .image-size {
   width: 100px;
   height: 100px;
-  filter: invert(100%);
 }
 
 .street::before {
@@ -225,16 +249,25 @@ a:hover {
   content: "📧 ";
 }
 
-.input-container {
+.calculator-field-container {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  justify-content: center;
+  align-items: flex-end;
+
+  gap: 20px;
+  margin-top: 50px;
 }
 
-.input-container label {
+.calculator-field {
+  margin-bottom: 15px;
+  width: 200px;
+}
+
+.calculator-field label {
   white-space: nowrap;
   flex: 1;
   margin-right: 10px;
+  padding-bottom: 500px;
 }
 
 .button-container {
@@ -242,6 +275,11 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
+}
+
+.button-container img {
+  width: 80px;
+  height: 80px;
 }
 
 .button-container button {
@@ -257,6 +295,7 @@ a:hover {
   display: flex;
   gap: 150px;
   flex-direction: row;
+  box-sizing: border-box;
 }
 
 /* ID Section*/

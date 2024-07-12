@@ -19,65 +19,73 @@
       <a href="./calculator.html">Rechner</a>
     </nav>
     <main>
-      <select id="2d-shape-select">
-        <option value="triangle">Dreieck</option>
-        <option value="square">Quadrat</option>
-        <option value="rectangle">Rechteck</option>
-        <option value="circle">Kreis</option>
-        <option value="cube">Würfel</option>
-        <option value="cuboid">Quader</option>
-        <option value="sphere">Kugel</option>
-        <option value="pyramid3">3 seitige Pyramide</option>
-        <option value="pyramid4">4 seitige Pyramide</option>
-      </select>
-
-      <button type="button" onclick="calculate()">Berechnen</button>
+      <h2>Wähle eine Form aus</h2>
+      <div class="button-container">
+        <button id="btnTriangle" onclick="updateFields('triangle')"><img src="./img/Triangle.png" /></button>
+        <button id="btnSquare" onclick="updateFields('square')"><img src="./img/Square.png" /></button>
+        <button id="btnRectangle" onclick="updateFields('rectangle')"><img src="./img/Rectan.png" /></button>
+        <button id="btnCircle" onclick="updateFields('circle')"><img src="./img/Circle.png" /></button>
+        <button id="btnCube" onclick="updateFields('cube')"><img src="./img/Cube.png" /></button>
+        <button id="btnCuboid" onclick="updateFields('cuboid')"><img src="./img/Cuboid.png" /></button>
+        <button id="btnSphere" onclick="updateFields('sphere')"><img src="./img/Sphere.png" /></button>
+        <button id="btnPyramid" onclick="updateFields('pyramid')"><img src="./img/Pyramid.png" /></button>
+      </div>
 
       <!-- ELEGANCE-Pattern: Focus on User Needs: Placeholders and Labels for good UX-->
-      <div class="input-container" id="a">
-        <label for="input-a">Seite A:</label>
-        <input type="text" placeholder="Seite A" id="input-a" />
+      <div class="calculator-field-container">
+        <div class="calculator-field" id="a">
+          <label for="input-a">Seite A</label>
+          <input type="text" placeholder="Seite A" id="input-a" />
+        </div>
+
+        <div class="calculator-field" id="b">
+          <label for="input-b">Seite B</label>
+          <input type="text" placeholder="Seite B" id="input-b" />
+        </div>
+
+        <div class="calculator-field" id="c">
+          <label for="input-c">Seite C</label>
+          <input type="text" placeholder="Seite C" id="input-c" />
+        </div>
+
+        <div class="calculator-field" id="r">
+          <label for="input-r">Radius</label>
+          <input type="text" placeholder="Radius" id="input-r" />
+        </div>
+
+        <div class="calculator-field" id="g">
+          <label for="input-g">Grundseite</label>
+          <input type="text" placeholder="Grundseite" id="input-g" />
+        </div>
+
+        <div class="calculator-field" id="h">
+          <label for="input-h">Höhe</label>
+          <input type="text" placeholder="Höhe" id="input-h" />
+        </div>
+
+        <div class="calculator-field" id="g-area">
+          <label for="input-g-area">Grundfläche</label>
+          <input type="text" placeholder="Grundfläche" id="input-g-area" />
+        </div>
+
+        <div class="calculator-field" id="area">
+          <label for="input-area">Fläche</label>
+          <input type="text" placeholder="Fläche" id="input-area" />
+        </div>
+
+        <div class="calculator-field" id="volume">
+          <label for="input-volume">Fläche</label>
+          <input type="text" placeholder="Fläche" id="input-volume" />
+        </div>
+
+        <button class="calculator-field" type="button" onclick="calculate()">Berechnen</button>
       </div>
 
-      <div class="input-container" id="b">
-        <label for="input-b">Seite B:</label>
-        <input type="text" placeholder="Seite B" id="input-b" />
-      </div>
-
-      <div class="input-container" id="c">
-        <label for="input-c">Seite C:</label>
-        <input type="text" placeholder="Seite C" id="input-c" />
-      </div>
-
-      <div class="input-container" id="r">
-        <label for="input-r">Radius:</label>
-        <input type="text" placeholder="Radius" id="input-r" />
-      </div>
-
-      <div class="input-container" id="g">
-        <label for="input-g">Grundseite:</label>
-        <input type="text" placeholder="Grundseite" id="input-g" />
-      </div>
-
-      <div class="input-container" id="h">
-        <label for="input-h">Höhe:</label>
-        <input type="text" placeholder="Höhe" id="input-h" />
-      </div>
-
-      <div class="input-container" id="g-area">
-        <label for="input-g-area">Grundfläche:</label>
-        <input type="text" placeholder="Grundfläche" id="input-g-area" />
-      </div>
-
-      <div class="input-container" id="area">
-        <label for="input-area">Fläche:</label>
-        <input type="text" placeholder="Fläche" id="input-area" />
-      </div>
-
-      <div class="input-container" id="volume">
-        <label for="input-volume">Fläche:</label>
-        <input type="text" placeholder="Fläche" id="input-volume" />
-      </div>
+      <h2>Anleitung</h2>
+      <p>
+        Wähle eine Form aus und gebe die Werte ein die ihnen bekannt sind und lasse die anderen Felder leer. Wenn sie
+        genügend Informationen eingeben hast werden die anderen Felder automatisch ausgefüllt.
+      </p>
     </main>
   </body>
 </html>

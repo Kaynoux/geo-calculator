@@ -20,19 +20,19 @@
       <a href="./calculator.html">Rechner</a>
     </nav>
     <main>
+      <h2>Wähle eine Form aus um sie zu markieren</h2>
       <div class="button-container">
-        <button id="btnTriangle" onclick="highlightElement('triangle')">Triangle</button>
-        <button id="btnSquare" onclick="highlightElement('square')">Square</button>
-        <button id="btnRectangle" onclick="highlightElement('rectangle')">Rectangle</button>
-        <button id="btnCircle" onclick="highlightElement('circle')">Circle</button>
-        <button id="btnCube" onclick="highlightElement('cube')">Cube</button>
-        <button id="btnCuboid" onclick="highlightElement('cuboid')">Cuboid</button>
-        <button id="btnSphere" onclick="highlightElement('sphere')">Sphere</button>
-        <button id="btnPyramid3" onclick="highlightElement('pyramid3')">3-sided Pyramid</button>
-        <button id="btnPyramid4" onclick="highlightElement('pyramid4')">4-sided Pyramid</button>
-        <button id="btnClear" onclick="clearAllBorders()">Clear</button>
-        <button id="btn2D" onclick="highlightElementsByClass('.form2d')">2D</button>
-        <button id="btn3D" onclick="highlightElementsByClass('.form3d')">3D</button>
+        <button id="btnTriangle" onclick="highlightElement('triangle')"><img src="./img/Triangle.png" /></button>
+        <button id="btnSquare" onclick="highlightElement('square')"><img src="./img/Square.png" /></button>
+        <button id="btnRectangle" onclick="highlightElement('rectangle')"><img src="./img/Rectan.png" /></button>
+        <button id="btnCircle" onclick="highlightElement('circle')"><img src="./img/Circle.png" /></button>
+        <button id="btnCube" onclick="highlightElement('cube')"><img src="./img/Cube.png" /></button>
+        <button id="btnCuboid" onclick="highlightElement('cuboid')"><img src="./img/Cuboid.png" /></button>
+        <button id="btnSphere" onclick="highlightElement('sphere')"><img src="./img/Sphere.png" /></button>
+        <button id="btnPyramid" onclick="highlightElement('pyramid')"><img src="./img/Pyramid.png" /></button>
+        <button id="btn2D" onclick="highlightElementsByClass('.form2d')"><b>2D Formen</b></button>
+        <button id="btn3D" onclick="highlightElementsByClass('.form3d')"><b>3D Formen</b></button>
+        <button id="btnClear" onclick="clearAllBorders()"><b>Clear</b></button>
       </div>
       <div>
         <table style="width: 100%">
@@ -47,7 +47,7 @@
           <tr id="triangle" class="form2d">
             <td>
               <p>Dreieck</p>
-              <img class="image-size" src="./img/dreieck.gif" alt="Dreieck" />
+              <img class="image-size" src="./img/Triangle.png" alt="Dreieck" />
             </td>
             <td>
               <math><mi>a</mi> <mo>+</mo> <mi>b</mi> <mo>+</mo> <mi>c</mi></math>
@@ -63,7 +63,7 @@
           <tr id="square" class="form2d">
             <td>
               <p>Quadrat</p>
-              <img class="image-size" src="./img/quadrat.gif" alt="Quadrat" />
+              <img class="image-size" src="./img/Square.png" alt="Quadrat" />
             </td>
             <td>
               <math><mi>a</mi> <mo>*</mo> <mn>4</mn></math>
@@ -77,7 +77,7 @@
           <tr id="rectangle" class="form2d">
             <td>
               <p>Rechteck</p>
-              <img class="image-size" src="./img/rechteck.gif" alt="Rechteck" />
+              <img class="image-size" src="./img/Rectan.png" alt="Rechteck" />
             </td>
             <td>
               <math> <mn>2</mn> <mo>*</mo> <mi>a</mi> <mo>+</mo> <mn>2</mn> <mo>*</mo> <mi>b</mi> </math>
@@ -89,7 +89,7 @@
           <tr id="circle" class="form2d">
             <td>
               <p>Kreis</p>
-              <img class="image-size" src="./img/kreis.gif" alt="Kreis" />
+              <img class="image-size" src="./img/Circle.png" alt="Kreis" />
             </td>
             <td>
               <math><mn>2</mn> <mo>*</mo> <mi>&pi;</mi> <mo>*</mo> <mi>r</mi></math>
@@ -114,7 +114,7 @@
           <tr id="cube" class="form3d">
             <td>
               <p>Würfel</p>
-              <img class="image-size" src="./img/wuerfel.gif" alt="Würfel" />
+              <img class="image-size" src="./img/Cube.png" alt="Würfel" />
             </td>
             <td>
               <math>
@@ -130,7 +130,7 @@
           <tr id="cuboid" class="form3d">
             <td>
               <p>Quader</p>
-              <img class="image-size" src="./img/quader.gif" alt="Quader" />
+              <img class="image-size" src="./img/Cuboid.png" alt="Quader" />
             </td>
             <td>
               <math>
@@ -145,7 +145,7 @@
           <tr id="sphere" class="form3d">
             <td>
               <p>Kugel</p>
-              <img class="image-size" src="./img/kugel.gif" alt="Kugel" />
+              <img class="image-size" src="./img/Sphere.png" alt="Kugel" />
             </td>
             <td>
               <math>
@@ -159,27 +159,10 @@
               </math>
             </td>
           </tr>
-          <tr id="pyramid3" class="form3d">
+          <tr id="pyramid" class="form3d">
             <td>
-              <p>3 seitige Pyramide</p>
-              <img class="image-size" src="./img/pyra3.webp" alt="3 seitige Pyramide" />
-            </td>
-            <td>
-              <math>
-                <mfrac><mn>1</mn><mn>2</mn></mfrac> <mo>*</mo> <mi>g</mi> <mo>*</mo> <mi>h</mi>
-              </math>
-            </td>
-            <td>
-              <math>
-                <mfrac><mn>1</mn><mn>2</mn></mfrac> <mo>*</mo> <mi>g</mi> <mo>*</mo> <mi>h</mi>
-                <mi>t</mi>
-              </math>
-            </td>
-          </tr>
-          <tr id="pyramid4" class="form3d">
-            <td>
-              <p>4 seitige Pyramide</p>
-              <img class="image-size" src="./img/pyra.gif" alt="4 seitige Pyramide" />
+              <p>Pyramide</p>
+              <img class="image-size" src="./img/Pyramid.png" alt="Pyramide" />
             </td>
             <td>
               <math>
@@ -211,6 +194,7 @@
           , abgerufen am 9.06.2024
         </li>
       </ol>
+      <button type="button" id="themeToggleBtn">Toggle Theme</button>
     </footer>
   </body>
 </html>

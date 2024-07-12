@@ -20,3 +20,19 @@ function highlightElementsByClass(className) {
         element.classList.add('highlight-border');
     });
 }
+
+function toggleTheme() {
+    const root = document.documentElement;
+  
+    // Check if dark mode is currently enabled
+    if (root.classList.contains('light-mode')) {
+      // If yes, remove the light-mode class to switch to dark mode
+      root.classList.remove('light-mode');
+    } else {
+      // Otherwise, add the light-mode class to switch to light mode
+      root.classList.add('light-mode');
+    }
+  }
+  
+  // Example: Attach the function to a button click
+  document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

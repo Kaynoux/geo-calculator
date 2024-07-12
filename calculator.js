@@ -1,10 +1,8 @@
-let shapeSelect, divA, divB, divC, divR, divG, divH, divArea, divVolume;
+let shapeSelect, divA, divB, divC, divR, divG, divH, diletea, divVolume;
 let inputA, inputB, inputC, inputR, inputG, inputH, inputArea, inputVolume;
-var currentShape = "0";
+let currentShape;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const shapeSelect = document.getElementById('2d-shape-select');
-
   divA = document.getElementById('a');
   divB = document.getElementById('b');
   divC = document.getElementById('c');
@@ -12,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   divG = document.getElementById('g');
   divH = document.getElementById('h');
   divGArea = document.getElementById('g-area');
-  divArea = document.getElementById('area');
+  diletea = document.getElementById('area');
   divVolume = document.getElementById('volume');
 
   inputA = document.getElementById('input-a');
@@ -26,71 +24,66 @@ document.addEventListener('DOMContentLoaded', () => {
   inputVolume = document.getElementById('input-volume');
 
   updateFields();
-  shapeSelect.addEventListener('change', updateFields);
-
-  function updateFields() {
-    currentShape = shapeSelect.value;
-
-    // Alle Felder ausblenden
-    divA.style.display = 'none';
-    divB.style.display = 'none';
-    divC.style.display = 'none';
-    divR.style.display = 'none';
-    divG.style.display = 'none';
-    divH.style.display = 'none';
-    divGArea.style.display = 'none';
-    divArea.style.display = 'none';
-    divVolume.style.display = 'none';
-    
-    clearAllFieldsAndBorders();
-
-    // Relevante Felder einblenden
-    switch (currentShape) {
-      case 'triangle':
-        divA.style.display = 'block';
-        divB.style.display = 'block';
-        divC.style.display = 'block';
-        divArea.style.display = 'block';
-        break;
-      case 'square':
-        divA.style.display = 'block';
-        divArea.style.display = 'block';
-        break;
-      case 'rectangle':
-        divA.style.display = 'block';
-        divB.style.display = 'block';
-        divArea.style.display = 'block';
-        break;
-      case 'circle':
-        divR.style.display = 'block';
-        divArea.style.display = 'block';
-        break;
-      case 'cube':
-        divA.style.display = 'block';
-        divVolume.style.display = 'block';
-        break;
-      case 'cuboid':
-        divA.style.display = 'block';
-        divB.style.display = 'block';
-        divC.style.display = 'block';
-        divVolume.style.display = 'block';
-        break;
-      case 'sphere':
-        divR.style.display = 'block';
-        divVolume.style.display = 'block';
-        break;
-      case 'pyramid3':
-        divGArea.style.display = 'block';
-        divH.style.display = 'block';
-        divVolume.style.display = 'block';
-        break;
-      case 'pyramid4':
-        divGArea.style.display = 'block';
-        divH.style.display = 'block';
-        divVolume.style.display = 'block';
-    }
-  }
 });
+
+function updateFields(newShape) {
+
+  currentShape = newShape;
+  // Alle Felder ausblenden
+  divA.style.display = 'none';
+  divB.style.display = 'none';
+  divC.style.display = 'none';
+  divR.style.display = 'none';
+  divG.style.display = 'none';
+  divH.style.display = 'none';
+  divGArea.style.display = 'none';
+  diletea.style.display = 'none';
+  divVolume.style.display = 'none';
+  
+  clearAllFieldsAndBorders();
+
+  // Relevante Felder einblenden
+  switch (currentShape) {
+    case 'triangle':
+      divA.style.display = 'block';
+      divB.style.display = 'block';
+      divC.style.display = 'block';
+      diletea.style.display = 'block';
+      break;
+    case 'square':
+      divA.style.display = 'block';
+      diletea.style.display = 'block';
+      break;
+    case 'rectangle':
+      divA.style.display = 'block';
+      divB.style.display = 'block';
+      diletea.style.display = 'block';
+      break;
+    case 'circle':
+      divR.style.display = 'block';
+      diletea.style.display = 'block';
+      break;
+    case 'cube':
+      divA.style.display = 'block';
+      divVolume.style.display = 'block';
+      break;
+    case 'cuboid':
+      divA.style.display = 'block';
+      divB.style.display = 'block';
+      divC.style.display = 'block';
+      divVolume.style.display = 'block';
+      break;
+    case 'sphere':
+      divR.style.display = 'block';
+      divVolume.style.display = 'block';
+      break;
+    case 'pyramid':
+      divGArea.style.display = 'block';
+      divH.style.display = 'block';
+      divVolume.style.display = 'block';
+      break;
+  }
+}
 
 function clearAllFieldsAndBorders() {
   inputA.value = '';
@@ -112,7 +105,6 @@ function clearAllFieldsAndBorders() {
   inputArea.style.border = '';
   inputVolume.style.border = '';
 }
-
 
 function calculate() {
   switch (currentShape) {
@@ -137,10 +129,7 @@ function calculate() {
     case "sphere":
       calculateSphere();
       break;
-    case "pyramid3":
-      calculatePyramid();
-      break;
-    case "pyramid4":
+    case "pyramid":
       calculatePyramid();
       break;
   } 
@@ -152,7 +141,7 @@ function isEmpty(str) {
 
 function isError(input)
 {
-  if(isNaN(input.value) && !isEmpty(input.value))
+  if((isNaN(input.value) || parseFloat(input.value) < 0) && !isEmpty(input.value))
   {
     input.style.border = '2px solid red';
     return true;
@@ -163,24 +152,21 @@ function isError(input)
 
 function calculateTriangle()
 {
-  var a = parseFloat(inputA.value);
-  var b = parseFloat(inputB.value);
-  var c = parseFloat(inputC.value);
-  var area = parseFloat(inputArea.value);
+  let a = parseFloat(inputA.value);
+  let b = parseFloat(inputB.value);
+  let c = parseFloat(inputC.value);
+  let area = parseFloat(inputArea.value);
 
-  if(isError(inputA) & isError(inputB) & isError(inputC) & isError(inputArea))
-  {
-    return;
-  }
-
-  console.log(a);
-  console.log(b);
-  console.log(c);
-  console.log(area);
+  let error = false;
+  if(isError(inputA)) error = true;
+  if(isError(inputB)) error = true;
+  if(isError(inputC)) error = true;
+  if(isError(inputArea)) error = true;
+  if(error) return;
 
   if (a && b && c)
   {
-    var s = (a + b + c) / 2;
+    let s = (a + b + c) / 2;
     inputArea.value = Math.sqrt(s * (s - a) * (s - b) * (s - c));
   }
   else if(a && b && area)
@@ -206,10 +192,10 @@ function calculateSquare()
   let a = parseFloat(inputA.value);
   let area = parseFloat(inputArea.value);
 
-  if(isError(inputA) || isError(inputArea))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputA) | isError(inputArea)) error = true;
+  if(isError(inputArea)) error = true;
+  if(error) return;
 
   console.log(a);
   console.log(area);
@@ -234,10 +220,11 @@ function calculateRectangle()
   let b = parseFloat(inputB.value);
   let area = parseFloat(inputArea.value);
 
-  if(isError(inputA) || isError(inputB) || isError(inputArea))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputA)) error = true;
+  if(isError(inputB)) error = true;
+  if(isError(inputArea)) error = true;
+  if(error) return;
 
   if(a && b)
   {
@@ -262,10 +249,10 @@ function calculateCircle()
   let r = parseFloat(inputR.value);
   let area = parseFloat(inputArea.value);
 
-  if(isError(inputR) || isError(inputArea))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputR)) error = true;
+  if(isError(inputArea)) error = true;
+  if(error) return;
 
   if(r)
   {
@@ -282,10 +269,10 @@ function calculateCube()
   let a = parseFloat(inputA.value);
   let volume = parseFloat(inputVolume.value);
 
-  if(isError(inputA) || isError(inputVolume))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputA) | isError(inputVolume)) error = true;
+  if(isError(inputVolume)) error = true;
+  if(error) return;
 
   if(a)
   {
@@ -309,10 +296,12 @@ function calculateCuboid()
   let c = parseFloat(inputC.value);
   let volume = parseFloat(inputVolume.value);
 
-  if(isError(inputA) || isError(inputB) || isError(inputC) || isError(inputVolume))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputA)) error = true;
+  if(isError(inputB)) error = true;
+  if(isError(inputC)) error = true;
+  if(isError(inputVolume)) error = true;
+  if(error) return;
 
   if (a && b && c)
   {
@@ -341,10 +330,10 @@ function calculateSphere()
   let r = parseFloat(inputR.value);
   let volume = parseFloat(inputVolume.value);
 
-  if(isError(inputR) || isError(inputVolume))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputR) | isError(inputVolume)) error = true;
+  if(isError(inputVolume)) error = true;
+  if(error) return;
 
   if(r)
   {
@@ -366,10 +355,11 @@ function calculatePyramid()
   let h = parseFloat(inputH.value);
   let volume = parseFloat(inputVolume.value);
 
-  if(isError(inputGArea) || isError(inputH) || isError(inputVolume))
-  {
-    return;
-  }
+  let error = false;
+  if(isError(inputGArea)) error = true;
+  if(isError(inputH)) error = true;
+  if(isError(inputVolume)) error = true;
+  if(error) return;
 
   if(g && h)
   {
@@ -381,7 +371,7 @@ function calculatePyramid()
   }
   else if(h && volume)
   {
-    inputG.value = Math.sqrt(volume / (1 / 3 * h));
+    inputGArea.value = Math.sqrt(volume / (1 / 3 * h));
   }
   else
   {
