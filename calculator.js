@@ -1,4 +1,11 @@
-let shapeSelect, divA, divB, divC, divR, divG, divH, diletea, divVolume;
+/**
+ * This file is relativly long because of my approach to calculate the missing values dynamically by trying to calculate
+ * empty input field. It is a compromise between a DRY principle and dynmaic approach wich causes a lot of cases to be checked
+ * while stil being easy to understand and maintain.
+ */
+
+// Store all the references to the elements for easy access
+let shapeSelect, divA, divB, divC, divR, divG, divH, divArea, divVolume;
 let inputA, inputB, inputC, inputR, inputG, inputH, inputArea, inputVolume;
 let currentShape;
 
@@ -11,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   divG = document.getElementById('g');
   divH = document.getElementById('h');
   divGArea = document.getElementById('g-area');
-  diletea = document.getElementById('area');
+  divArea = document.getElementById('area');
   divVolume = document.getElementById('volume');
 
   inputA = document.getElementById('input-a');
@@ -39,7 +46,7 @@ function updateFields(newShape) {
   divG.style.display = 'none';
   divH.style.display = 'none';
   divGArea.style.display = 'none';
-  diletea.style.display = 'none';
+  divArea.style.display = 'none';
   divVolume.style.display = 'none';
   calculateBtn.style.display = 'none';
   
@@ -51,23 +58,23 @@ function updateFields(newShape) {
       divA.style.display = 'block';
       divB.style.display = 'block';
       divC.style.display = 'block';
-      diletea.style.display = 'block';
+      divArea.style.display = 'block';
       calculateBtn.style.display = 'block';
       break;
     case 'square':
       divA.style.display = 'block';
-      diletea.style.display = 'block';
+      divArea.style.display = 'block';
       calculateBtn.style.display = 'block';
       break;
     case 'rectangle':
       divA.style.display = 'block';
       divB.style.display = 'block';
-      diletea.style.display = 'block';
+      divArea.style.display = 'block';
       calculateBtn.style.display = 'block';
       break;
     case 'circle':
       divR.style.display = 'block';
-      diletea.style.display = 'block';
+      divArea.style.display = 'block';
       calculateBtn.style.display = 'block';
       break;
     case 'cube':
@@ -120,6 +127,9 @@ function clearAllFieldsAndBorders() {
   inputVolume.style.border = '';
 }
 
+/**
+ * Calls the specfic calculate function based on the selected shape
+ */
 function calculate() {
   switch (currentShape) {
     case "triangle":
@@ -174,6 +184,7 @@ function isError(input)
 /* Functions for calculating the area and volume of the shapes
 * It converts the input into floats and then checks if the input is valid
 * If the input is invalid the field is marked after checking
+* This is also the reason why every field is checked individually even if the first one is already invalid
 * If all inputs are valid it trys to calculate the missing value
 */
 

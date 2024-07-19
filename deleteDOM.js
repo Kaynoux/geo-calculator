@@ -1,3 +1,7 @@
+/**
+ * This script deletes all elements, exept the circle, from the DOM when the user presses the "k" key.
+ */
+
 document.addEventListener("keydown", function(event) {
     if (event.key === "k" || event.key === "K") {
         // Finds the circle Element on the Formulas page or the Calculator page and stores it in the circleElement variable depending on the current page
@@ -18,5 +22,3 @@ document.addEventListener("keydown", function(event) {
         document.body.appendChild(restoreButton);
     }
 });
-
-document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

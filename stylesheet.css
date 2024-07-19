@@ -1,7 +1,9 @@
 /* Generel Section*/
 /*------------------------------------------------------*/
 
-/* Checking for the preferred color scheme */
+/* Checking for the preferred color scheme 
+   all Colors can be changed here globably 
+*/
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #bb86fc;

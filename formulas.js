@@ -1,3 +1,4 @@
+// Store all rows to iterate over them
 let allRows = document.getElementsByTagName('tr');
 
 function highlightElement(id) {
